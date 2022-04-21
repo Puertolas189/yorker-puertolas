@@ -3,7 +3,7 @@ import botonCompra from '../../BotonCompraYorker.gif'
 
 function CardWidget() {
   return (
-    <div><img src={botonCompra} style={{width: '5rem'}}></img>  </div>
+    <div><img src={botonCompra} style={{width: '5rem'}} alt=''></img>  </div>
   )
 }
 
