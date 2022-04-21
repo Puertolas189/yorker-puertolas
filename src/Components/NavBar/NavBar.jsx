@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../../logo-yorker.png'
+import CardWidget from '../CardWidget/CardWidget'
 
 export default function NavBar() {
   return (
@@ -21,6 +22,7 @@ export default function NavBar() {
             </li>
           </ul>
         </div>
+      <CardWidget/>
       </div>
     </nav>    
   )
