@@ -7,25 +7,27 @@ function ItemCount({ stock, initial, onAdd }) {
   let [cantidad, setCantidad] = useState(initial);
   let [stockActual, setStockActual] = useState(stock);
 
-  // Incrementa el número a reservar por 1
-  let agregar = () => {
+  let sumar = () => {
     if (cantidad < stockActual) {
       setCantidad(cantidad + 1);
     }
   };
 
-  // disminuye el número a reservar por 1
-  let sacar = () => {
+  let restar = () => {
     if (cantidad > 0) {
       setCantidad(cantidad - 1);
     }
+  };
+
+  let agregar = () => {
+    onAdd(stockActual-cantidad)
   };
 
   return (
     <div>
       <h6>Unidades disponibles: {stockActual}</h6>
       <h6>Cantidad seleccionada: {cantidad}</h6>
-      <Button onClick={sacar}>
+      <Button onClick={restar}>
         <MinusIcon></MinusIcon>
       </Button>
       <Button onClick={agregar}>
