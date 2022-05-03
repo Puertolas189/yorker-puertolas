@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../../logo-yorker.png'
+import Logo from '../../Imagenes/logo-yorker.png'
 import CardWidget from '../CardWidget/CardWidget'
 
 export default function NavBar() {

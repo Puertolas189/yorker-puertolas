@@ -30,7 +30,7 @@ function ItemCount({ stock, initial, onAdd }) {
       <Button onClick={restar}>
         <MinusIcon></MinusIcon>
       </Button>
-      <Button onClick={agregar}>
+      <Button onClick={sumar}>
         <PlusIcon></PlusIcon>
       </Button>
     </div>
