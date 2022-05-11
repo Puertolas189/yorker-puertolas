@@ -1,15 +1,13 @@
 import "./App.css";
 import NavBar from "./Components/NavBar/NavBar";
-import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
+import Layout from "./Layout/layout";
+import Rutas from "./routes/Rutas";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <ItemListContainer
-        greeting={"Bienvenido a un nuevo mundo para la mujer."}
-      ></ItemListContainer>
-    </div>
+      <Rutas/>
+   </div>
   );
 }
 

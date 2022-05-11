@@ -5,6 +5,7 @@ import './ItemList';
 import { Grid } from "@mui/material";
 
 function ItemList({ productos }) {
+  console.log(productos);
   return (
     <Grid container spacing={2}>
       {productos.length > 0 ? (

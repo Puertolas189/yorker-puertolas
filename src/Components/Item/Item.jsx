@@ -1,9 +1,9 @@
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
-import Button from "@mui/material/Button";
+import { Link } from 'react-router-dom'
 
 function Item({ producto }) {
-
+console.log(producto);
   const initial=0;
   const onAdd = () => {
     console.log("Hola Mundo");
@@ -13,7 +13,7 @@ function Item({ producto }) {
     <div>
       <img
         src={producto.imagen}
-        alt="Imagen del curso"
+        alt={producto.nombre}
         style={{ width: "300px" }}
       />
 
@@ -22,7 +22,7 @@ function Item({ producto }) {
         <h4>{producto.nombre}</h4>
         <h3>{producto.precio}</h3>
         <ItemCount stock={producto.stock} initial={initial} func="onAdd"/>
-        <Button>Ver detalle</Button>
+        <Link to={`/item/${producto.id}`}>Ver detalle</Link>
       </div>
     </div>
   );

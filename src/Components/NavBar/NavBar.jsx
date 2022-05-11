@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import Logo from '../../Imagenes/logo-yorker.png'
 import CardWidget from '../CardWidget/CardWidget'
 
@@ -12,13 +13,19 @@ export default function NavBar() {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Inicio</a>
+            <NavLink className="nav-link" to="/">Inicio</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Productos</a>
+            <NavLink className="nav-link" to="/category/3">Tratamiento</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Contacto</a>
+            <NavLink className="nav-link" to="/category/2">Spa Day</NavLink>
+            </li>
+            <li className="nav-item">
+            <NavLink className="nav-link" to="/category/1">Capsulas</NavLink>
+            </li>
+            <li className="nav-item">
+            <NavLink className="nav-link" to="/contacto">Contacto</NavLink>
             </li>
           </ul>
         </div>
