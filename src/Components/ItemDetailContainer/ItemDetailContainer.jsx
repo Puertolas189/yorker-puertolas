@@ -10,9 +10,7 @@ function ItemDetailContainer() {
 
   useEffect(() => {
     const detalle = new Promise((resolve, reject) => {
-      setTimeout(() => {
         resolve(filtro);
-      }, 500);
     });
     detalle
       .then((res) => {
@@ -25,7 +23,7 @@ function ItemDetailContainer() {
 
   return (
     <div style={{ align: "center" }}>
-      <ItemDetail producto={filtro} />
+      <ItemDetail producto={producto} />
     </div>
   );
 }
