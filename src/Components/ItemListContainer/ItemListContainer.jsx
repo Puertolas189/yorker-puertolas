@@ -4,11 +4,9 @@ import ItemCount from "../ItemCount/ItemCount";
 import { data } from "../../Config/Data";
 import ItemList from "../ItemList/ItemList";
 
-
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
 
- 
   useEffect(() => {
     const pedido = new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -25,9 +23,9 @@ const ItemListContainer = ({ greeting }) => {
   }, []);
 
   return (
-    <div style={{align: "center"}}>
+    <div style={{ align: "center" }}>
       <h1 style={{ color: "red" }}>{greeting}</h1>
-      <ItemList productos={productos}/>
+      <ItemList productos={productos} />
     </div>
   );
 };

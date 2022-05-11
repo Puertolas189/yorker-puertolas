@@ -20,7 +20,7 @@ function ItemCount({ stock, initial, onAdd }) {
   };
 
   let agregar = () => {
-    onAdd(stockActual-cantidad)
+    onAdd(stockActual - cantidad);
   };
 
   return (

@@ -4,13 +4,13 @@ import { data } from "../../Config/Data";
 import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
-    const { id } = useParams();
-    const [producto, setProducto] = useState([]);
+  const { id } = useParams();
+  const [producto, setProducto] = useState([]);
   const filtro = data.find((prod) => prod.id === Number(id));
 
   useEffect(() => {
     const detalle = new Promise((resolve, reject) => {
-        resolve(filtro);
+      resolve(filtro);
     });
     detalle
       .then((res) => {
