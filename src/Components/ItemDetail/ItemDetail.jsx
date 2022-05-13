@@ -4,25 +4,11 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
 function ItemDetail({ producto }) {
-  let [stockActual, setStockActual] = useState();
-
-  useEffect(() => {
-    const pedido = new Promise((resolve, reject) => {
-      console.log(producto);
-      resolve(producto.stock);
-    });
-    pedido
-      .then((res) => {
-        setStockActual(res);
-      })
-      .catch((err) => console.log(err));
-
-    return () => {};
-  }, []);
+  let [stockActual, setStockActual] = useState(producto?.stock);
 
   const onAdd = (quantity) => {
-    console.log("Agregados " + quantity + " productos al carrito");
-    setStockActual(stockActual-quantity);
+    console.log("Agregados " + quantity + " productos al carrito. Stock actual: " + stockActual);
+    setStockActual(stockActual - quantity);
   };
 
   return (
@@ -41,12 +27,12 @@ function ItemDetail({ producto }) {
             <br />
             <h1>{producto.nombre}</h1>
             <h3>{producto.precio}</h3>
-            {stockActual > 0 ? (
-              <ItemCount stock={20} initial="1" onAdd={onAdd} />
+            {stockActual == 0 ? (
+              <Link to={`/cart`}>
+                <Button>Finalizar</Button>
+              </Link>
             ) : (
-              <Button>
-                <Link to={`/cart`}>Finalizar</Link>
-              </Button>
+              <ItemCount stock={producto?.stock} initial="1" onAdd={onAdd} />
             )}
           </div>
         </Grid>

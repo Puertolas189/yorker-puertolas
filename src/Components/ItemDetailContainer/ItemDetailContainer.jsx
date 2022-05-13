@@ -5,12 +5,14 @@ import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
   const { id } = useParams();
-  const [producto, setProducto] = useState([]);
+  const [producto, setProducto] = useState(null);
   const filtro = data.find((prod) => prod.id === Number(id));
 
   useEffect(() => {
     const detalle = new Promise((resolve, reject) => {
-      resolve(filtro);
+      setTimeout(() => {
+        resolve(filtro);
+      }, 2000);
     });
     detalle
       .then((res) => {
@@ -23,7 +25,11 @@ function ItemDetailContainer() {
 
   return (
     <div style={{ align: "center" }}>
-      <ItemDetail producto={producto} />
+      {producto ? (
+        <ItemDetail producto={producto} />
+      ) : (
+        <h1>Cargando</h1>
+      )}
     </div>
   );
 }
