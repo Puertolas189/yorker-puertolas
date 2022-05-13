@@ -3,12 +3,6 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
 function Item({ producto }) {
-  console.log(producto);
-  const initial = 0;
-  const onAdd = () => {
-    console.log("Hola Mundo");
-  };
-
   return (
     <div>
       <img
@@ -21,7 +15,7 @@ function Item({ producto }) {
         <br />
         <h4>{producto.nombre}</h4>
         <h3>{producto.precio}</h3>
-        <ItemCount stock={producto.stock} initial={initial} func="onAdd" />
+        {/* <ItemCount stock={producto.stock} initial={initial} func="onAdd" /> */}
         <Link to={`/item/${producto.id}`}>Ver detalle</Link>
       </div>
     </div>

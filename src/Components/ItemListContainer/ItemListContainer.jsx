@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import ItemCount from "../ItemCount/ItemCount";
 import { data } from "../../Config/Data";
 import ItemList from "../ItemList/ItemList";
 
@@ -19,7 +18,7 @@ const ItemListContainer = ({ greeting }) => {
       })
       .catch((err) => console.log(err));
 
-    return () => {};
+    return () => {setProductos()};
   }, []);
 
   return (

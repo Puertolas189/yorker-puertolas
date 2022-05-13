@@ -8,31 +8,36 @@ function ItemCount({ stock, initial, onAdd }) {
   let [stockActual, setStockActual] = useState(stock);
 
   let sumar = () => {
+    console.log(cantidad);
+    console.log(stockActual);
     if (cantidad < stockActual) {
-      setCantidad(cantidad + 1);
+      setCantidad(Number(cantidad) + 1);
     }
+    console.log(cantidad);
   };
 
   let restar = () => {
     if (cantidad > 0) {
-      setCantidad(cantidad - 1);
+      setCantidad(Number(cantidad) - 1);
     }
   };
 
   let agregar = () => {
-    onAdd(stockActual - cantidad);
+    setStockActual(Number(stockActual) - Number(cantidad));
+    onAdd(cantidad);
   };
 
   return (
     <div>
-      <h6>Unidades disponibles: {stockActual}</h6>
-      <h6>Cantidad seleccionada: {cantidad}</h6>
+      <h6>Unidades disponibles: {Number(stockActual)}</h6>
+      <h6>Cantidad seleccionada: {Number(cantidad)}</h6>
       <Button onClick={restar}>
         <MinusIcon></MinusIcon>
       </Button>
       <Button onClick={sumar}>
         <PlusIcon></PlusIcon>
       </Button>
+      <Button onClick={agregar}>Agregar</Button>
     </div>
   );
 }

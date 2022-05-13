@@ -10,9 +10,7 @@ function ItemCategoryContainer() {
   
   useEffect(() => {
     const detalle = new Promise((resolve, reject) => {
-      setTimeout(() => {
         resolve(filtro);
-      }, 500);
     });
     detalle
       .then((res) => {
