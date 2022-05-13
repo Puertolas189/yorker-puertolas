@@ -1,14 +1,15 @@
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
 function ItemDetail({ producto }) {
   let [stockActual, setStockActual] = useState();
-  
+
   useEffect(() => {
     const pedido = new Promise((resolve, reject) => {
-        console.log(producto);
-        resolve(producto.stock);
+      console.log(producto);
+      resolve(producto.stock);
     });
     pedido
       .then((res) => {
@@ -19,8 +20,9 @@ function ItemDetail({ producto }) {
     return () => {};
   }, []);
 
-  const  onAdd = (quantity) => {
+  const onAdd = (quantity) => {
     console.log("Agregados " + quantity + " productos al carrito");
+    setStockActual(stockActual-quantity);
   };
 
   return (
@@ -39,7 +41,13 @@ function ItemDetail({ producto }) {
             <br />
             <h1>{producto.nombre}</h1>
             <h3>{producto.precio}</h3>
-            <ItemCount stock={20} initial="1" onAdd={onAdd}/>
+            {stockActual > 0 ? (
+              <ItemCount stock={20} initial="1" onAdd={onAdd} />
+            ) : (
+              <Button>
+                <Link to={`/cart`}>Finalizar</Link>
+              </Button>
+            )}
           </div>
         </Grid>
         <Grid item xs={3}></Grid>

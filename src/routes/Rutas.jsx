@@ -3,6 +3,7 @@ import Contact from "../Components/Contact/Contact";
 import ItemCategoryContainer from "../Components/ItemCategoryContainer/ItemCategoryContainer";
 import ItemDetailContainer from "../Components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "../Components/ItemListContainer/ItemListContainer";
+import Cart from "../Components/Carrito/Cart";
 import Layout from "../Layout/layout";
 
 const Rutas = () => {
@@ -15,6 +16,7 @@ const Rutas = () => {
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/category/:id" element={<ItemCategoryContainer />} />
             <Route path="/contacto" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
           </Route>
         </Routes>
       </BrowserRouter>
