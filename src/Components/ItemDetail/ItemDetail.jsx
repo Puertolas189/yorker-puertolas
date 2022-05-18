@@ -1,14 +1,21 @@
 import { Button, Grid } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { GlobalContext } from "../../context/GlobalStateProvider";
 import ItemCount from "../ItemCount/ItemCount";
 
 function ItemDetail({ producto }) {
-  let [stockActual, setStockActual] = useState(producto?.stock);
+  const [stockActual, setStockActual] = useState(producto?.stock);
+  const [state,setState] = useState(producto);
+
+  const {carrito,AddToCard} = useContext(GlobalContext)
+
+
 
   const onAdd = (quantity) => {
     console.log("Agregados " + quantity + " productos al carrito. Stock actual: " + stockActual);
     setStockActual(stockActual - quantity);
+    AddToCard(producto,quantity)
   };
 
   return (

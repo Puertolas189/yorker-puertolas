@@ -1,13 +1,14 @@
 import "./App.css";
-import NavBar from "./Components/NavBar/NavBar";
-import Layout from "./Layout/layout";
+import GlobalStateProvider from "./context/GlobalStateProvider";
 import Rutas from "./routes/Rutas";
 
 function App() {
   return (
     <div className="App">
-      <Rutas/>
-   </div>
+      <GlobalStateProvider>
+        <Rutas />
+      </GlobalStateProvider>
+    </div>
   );
 }
 
