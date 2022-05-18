@@ -5,9 +5,10 @@ export const GlobalContext = createContext("");
 const GlobalStateProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
 
+
   const AddToCard = (producto, cantidad) => {
     if (carrito?.length > 0) {
-      if (carrito.findIndex((item) => item.producto.id === producto.id) >= 0)
+      if (carrito.some((item) => item.producto.id === producto.id))
         console.log("Ya existe");
       else 
         setCarrito([...carrito, { producto, cantidad }]);
