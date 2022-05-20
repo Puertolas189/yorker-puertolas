@@ -9,7 +9,7 @@ function CardWidget() {
   return (
     <div>
       <Link to={`/cart`}>
-        {" "}
+        {" "}<h7>{itemsEnCarrito}</h7>
         <img src={botonCompra} style={{ width: "5rem" }} alt=""></img>
       </Link>{" "}
     </div>
