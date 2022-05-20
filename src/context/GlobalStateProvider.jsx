@@ -4,25 +4,25 @@ export const GlobalContext = createContext("");
 
 const GlobalStateProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
-  //const [itemsEnCarrito, setItemsEnCarrito] = useState(0);
+  const [itemsEnCarrito, setItemsEnCarrito] = useState(0);
 
-   const DeleteFromCard = (id) => {
-     console.log("id: " + id);
-     const prodEliminar = carrito.filter((item) => item.producto.id !== id);
-     setCarrito(prodEliminar);
-   };
+  const DeleteFromCard = (id) => {
+    const prodEliminar = carrito.filter((item) => item.producto.id !== id);
+    setCarrito(prodEliminar);
+  };
 
   const DeleteAll = () => {
     setCarrito([]);
   };
 
   const AddToCard = (producto, cantidad) => {
+    setItemsEnCarrito(itemsEnCarrito + Number(cantidad));
     if (carrito?.length > 0) {
       if (carrito.some((item) => item.producto.id === producto.id)) {
         carrito.find((item) => item.producto.id === producto.id).cantidad +=
           Number(cantidad);
-        //setItemsEnCarrito(itemsEnCarrito + Number(cantidad));
-        console.log("Ya existe");
+
+        console.log(itemsEnCarrito);
       } else setCarrito([...carrito, { producto, cantidad }]);
     } else {
       setCarrito([...carrito, { producto, cantidad }]);
@@ -41,7 +41,7 @@ const GlobalStateProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         carrito,
-        //itemsEnCarrito,
+        itemsEnCarrito,
         AddToCard,
         DeleteFromCard,
         DeleteAll,

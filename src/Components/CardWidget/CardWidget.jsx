@@ -4,6 +4,7 @@ import botonCompra from "../../Imagenes/BotonCompraYorker.gif";
 import { GlobalContext } from "../../context/GlobalStateProvider";
 
 function CardWidget() {
+  const { itemsEnCarrito } = useContext(GlobalContext);
   
   return (
     <div>
