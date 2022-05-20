@@ -6,11 +6,11 @@ const GlobalStateProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
   //const [itemsEnCarrito, setItemsEnCarrito] = useState(0);
 
-  const DeleteFromCard = (id) => {
-    console.log("id: " + id);
-    const prodEliminar = carrito.filter((item) => item.producto.id !== id);
-    setCarrito(prodEliminar);
-  };
+   const DeleteFromCard = (id) => {
+     console.log("id: " + id);
+     const prodEliminar = carrito.filter((item) => item.producto.id !== id);
+     setCarrito(prodEliminar);
+   };
 
   const DeleteAll = () => {
     setCarrito([]);

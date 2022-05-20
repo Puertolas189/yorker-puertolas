@@ -5,7 +5,7 @@ import DeleteIcon from "@mui/icons-material/DeleteForever";
 import { Link } from "react-router-dom";
 
 function Cart() {
-  const { carrito, DeleteFromCard,DeleteAll, totalPrice } = useContext(GlobalContext);
+  const { carrito, DeleteFromCard, DeleteAll, totalPrice } = useContext(GlobalContext);
 
   let eliminarUno = (id) => {
     DeleteFromCard(id);
@@ -50,7 +50,7 @@ function Cart() {
                     </Grid>
                     <Grid item>
                       <Typography sx={{ cursor: "pointer" }} variant="body2">
-                        <Button onClick={eliminarUno(item.producto.id)}>
+                        <Button  onClick={() => eliminarUno(item.producto.id)}>
                           <DeleteIcon></DeleteIcon>
                         </Button>
                       </Typography>
