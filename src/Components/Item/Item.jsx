@@ -14,7 +14,7 @@ function Item({ producto }) {
       <div>
         <br />
         <h4>{producto.nombre}</h4>
-        <h3>{producto.precio}</h3>
+        <h3>$ {producto.precio}</h3>
         {/* <ItemCount stock={producto.stock} initial={initial} func="onAdd" /> */}
         <Link to={`/item/${producto.id}`}>Ver detalle</Link>
       </div>

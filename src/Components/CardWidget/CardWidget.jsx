@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import botonCompra from "../../Imagenes/BotonCompraYorker.gif";
-import ItemList from "../ItemList/ItemList";
+import { GlobalContext } from "../../context/GlobalStateProvider";
 
 function CardWidget() {
+  
   return (
     <div>
       <Link to={`/cart`}>

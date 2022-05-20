@@ -17,7 +17,7 @@ export const data = [
     categoria: 1,
     nombre: "Despigmentación I",
     stock: 20,
-    precio: "S 1500",
+    precio: 1500,
     imagen: DepigmentI,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:
@@ -35,7 +35,7 @@ export const data = [
     categoria: 1,
     nombre: "Hidratación I",
     stock: 40,
-    precio: "S 1500",
+    precio: 1500,
     imagen: HydrateI,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:
@@ -53,7 +53,7 @@ export const data = [
     categoria: 1,
     nombre: "Hidratación II",
     stock: 10,
-    precio: "S 1500",
+    precio: 1500,
     imagen: HydrateII,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:
@@ -71,7 +71,7 @@ export const data = [
     categoria: 1,
     nombre: "Renovación I",
     stock: 10,
-    precio: "S 1500",
+    precio: 1500,
     imagen: RenewI,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:
@@ -89,7 +89,7 @@ export const data = [
     categoria: 1,
     nombre: "Renovación II",
     stock: 13,
-    precio: "S 1500",
+    precio: 1500,
     imagen: RenewII,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:
@@ -107,7 +107,7 @@ export const data = [
     categoria: 1,
     nombre: "Reestructuración I",
     stock: 10,
-    precio: "S 1500",
+    precio: 1500,
     imagen: RestructureI,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:
@@ -125,7 +125,7 @@ export const data = [
     categoria: 1,
     nombre: "Reestructuración II",
     stock: 10,
-    precio: "S 1500",
+    precio: 1500,
     imagen: RestructureII,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:
@@ -143,7 +143,7 @@ export const data = [
     categoria: 2,
     nombre: "Shot Anti-Age",
     stock: 7,
-    precio: "S 3000",
+    precio: 3000,
     imagen: ShotAntiAging,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:
@@ -161,7 +161,7 @@ export const data = [
     categoria: 2,
     nombre: "Shot Hidratación",
     stock: 7,
-    precio: "S 3000",
+    precio: 3000,
     imagen: ShotHydratation,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:
@@ -179,7 +179,7 @@ export const data = [
     categoria: 2,
     nombre: "Shot Regeneración",
     stock: 7,
-    precio: "S 3000",
+    precio: 3000,
     imagen: ShotRegeneration,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:
@@ -197,7 +197,7 @@ export const data = [
     categoria: 3,
     nombre: "Tratamiento Renovación Celular",
     stock: 5,
-    precio: "S 9500",
+    precio: 9500,
     imagen: Treatment,
     titulo: "Crema facial ANTI-AGING II",
     descripcion:

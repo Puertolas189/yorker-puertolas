@@ -10,11 +10,7 @@ function ItemDetail({ producto }) {
 
   const {carrito,AddToCard} = useContext(GlobalContext)
 
-
-
   const onAdd = (quantity) => {
-    console.log("Agregados " + quantity + " productos al carrito. Stock actual: " + stockActual);
-    setStockActual(stockActual - quantity);
     AddToCard(producto,quantity)
   };
 
@@ -33,7 +29,7 @@ function ItemDetail({ producto }) {
           <div>
             <br />
             <h1>{producto.nombre}</h1>
-            <h3>{producto.precio}</h3>
+            <h3>$ {producto.precio}</h3>
             {stockActual == 0 ? (
               <Link to={`/cart`}>
                 <Button>Finalizar</Button>
