@@ -1,24 +1,25 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { data } from "../../Config/Data";
 import ItemList from "../ItemList/ItemList";
+import db from "../../Service/firebase";
+import { getDocs, collection } from "firebase/firestore";
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
 
-  useEffect(() => {
-    const pedido = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(data);
-      }, 2000);
-    });
-    pedido
-      .then((res) => {
-        setProductos(res);
-      })
-      .catch((err) => console.log(err));
+  const getData=async () => {
+    const docs = collection(db, "Productos");
 
-    return () => {setProductos()};
+    try {
+      const datos = await getDocs(docs);
+      const result = datos.docs.map(
+        (doc) => (doc = { id: doc.id, ...doc.data() })
+      );
+      setProductos(result);
+    } catch (error) {}
+  }
+  useEffect( () => {
+    getData();
   }, []);
 
   return (
