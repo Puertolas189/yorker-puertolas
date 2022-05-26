@@ -4,7 +4,6 @@ import { data } from "../../Config/Data";
 import { useParams } from "react-router-dom";
 import db from "../../Service/firebase";
 import { getDoc, doc } from "firebase/firestore";
-import { ExitToAppSharp } from "@mui/icons-material";
 
 function ItemDetailContainer() {
   const { id } = useParams();
